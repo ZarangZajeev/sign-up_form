@@ -1,0 +1,34 @@
+body{
+    background-image: url("images/background.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+form{
+    position: relative;
+    z-index: 1; /* Ensure the form is above the pseudo-element */
+    color: #fff; /* Set text color to white for better visibility */
+
+    /* Add a blur effect to the form's background image */
+    background-image: url("images/background.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Positioning and styling for the form */
+    padding: 5px;
+    border-radius: 10px;
+}
+form::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Place it below the form */
+    background: url("images/background.jpg") center/cover no-repeat;
+    filter: blur(8px);
+}
